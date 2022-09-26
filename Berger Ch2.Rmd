@@ -43,4 +43,24 @@ These are given below:
 * **Axiom 4**: (No Heaven or Hell) If $P_1 \prec P_2 \prec P_3$, there are numbers $0<\alpha, \beta <1$ such that $\alpha P_1 + (1 - \alpha) P_3 \prec P_2$ and $P_2 \prec \beta P_1 + (1-\beta)P_3$. 
 
 
+## Constructing a utility function 
 
+Pages 48 - 52 are concerned with how one might construct a utility function that satisfies the four rationality axioms. It is a somewhat complicated procedure, but essentially the thought process is to define utility of the worst outcome as 0 and the utility of the best outcome as 1 and then use these benchmarks for the utilities of supposed rewards $r_3$ and $r_4$ that fall a) between the best and worst outcomes $r_2$ and $r_1$, b) below $r_1$ and c) above $r_2.$ 
+
+
+---
+### Example: Expected winnings and utility
+
+
+---
+
+
+## From utility to loss 
+
+The concept of a loss function is fairly intuitive, defining the loss as the negative utility: 
+
+\[L(\theta, a) = -U(\theta,a).\]
+
+The author notes that if the state of nature $\theta$ is a statistical parameter, then $U(\theta, a)$ really is the expected utility of the random variable $Z$ that encompasses not only the true parameter value, but also the random realization of an outcome based on that parameter. For example, if $\theta$ is the proportion of a population that would buy a certain product, then the reward and therefore expected utility of an action is a function of $\theta$ as well as of the number of people who *actually do* buy the product based on various economic factors. The state of the economy is one random part that determines $Z$ and therefore influences the utility of an action given state of nature $\theta$. 
+
+The author also outlines several standard loss functions, including linear and squared-error loss. 
