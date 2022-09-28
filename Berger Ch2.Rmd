@@ -14,6 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 The goal of utility theory is to formalize the ordering of preferences for outcomes of actions by constructing a utility function $U(r)$ that consistently orders them.  
 Since there is uncertainty in what outcome will actually occur, we often end up working with probability distributions of the outcomes, attempting to assign a 'value' to the distribution by computing its expected utility. 
 
+
+
 ## Key Definitions
 
 Let 
@@ -49,8 +51,39 @@ Pages 48 - 52 are concerned with how one might construct a utility function that
 
 
 ---
+
 ### Example: Expected winnings and utility
 
+
+In the introduction of chapter 2, Berger gives an example: would you rather win \$10,000  with probability 1 or play a gamble where, with probability 0.5, you win \$25,000 and otherwise win \$0? 
+Most people would choose the lower value of \$10,000 with certainty. 
+
+There are clearly two probability distributions for this example. 
+$P_1$ corresponds with the distribution that assigns probability 1 to winning \$10,000 and zero otherwise. 
+$P_2$ corresponds with the distribution that has half of its probability mass on \$25,000 and half on \$0. 
+So for this problem $\mathscr{P} = \{P_1, P_2\}.$ 
+The possible actions are $\mathscr{A} = \{a_1, a_2\}$, where $a_1$ corresponds with choosing to go with the certain $r = 10$ and $a_2$ with playing the gamble for $r = 25.$
+For the gamble, define $\theta_1$ as the "you win" state of nature and $\theta_2$ as the "no win" state of nature. The probability of $\theta$ is $\pi(\theta) = 0.5.$
+The set of rewards $\mathscr{R} = \{r_1 = (a_1,\theta_1), r_2 = (a_1, \theta_2), r_3 = (a_2, \theta_1), r_4 = (a_2, \theta_2)\},$ where $(a_i, \theta_j)$ corresponds with action $a_i$ being taken when $\theta_j$ is the state of nature that occurs. 
+
+With these sets of actions and rewards, we want to define a utility function $U(r),$ using the method outlined in chapter 2. 
+The order of preferences is $r_4 \prec r_1 \prec r_2 \prec r_3$ because $r_4$ corresponds with playing the gamble and losing (\$0), $r_1$ corresponds with not playing the but if you had, you would have won, $r_2$ corresponds with not playing the gamble, and if you had you would have lost, and $r_3$ is choosing to gamble and winning. 
+Given these preferences, we define $U(r_4) = 0$ and $U(r_3) = 1.$
+
+To determine $U(r_1)$, we compare $r_1$ with the $\alpha \langle r_4 \rangle + (1-\alpha) \langle r_3 \rangle.$ In other words, we seek the value $\alpha$ such that choosing the certain 10 is about equivalent to risking winning nothing with probability $\alpha,$ and winning the 25 with probability $(1-\alpha).$ For me, $\alpha = 0.1$ feels about right because I would much rather take the certain 10 than risk winning nothing; the risk of winning nothing would have to be pretty small. Then, $U(r_1) = 0.1U(r_4) + 0.9U(r_3) = 0.9.$ Using a similar line of reasoning, I would rate the utility of $r_2$ as being $U(r_2) = 0.95.$ 
+
+To check for consistency, we can compare the utilities of $r_1, r_2$ and $r_3.$ Berger does this for an example on pages 50 - 51, but I am not going to do it here. 
+
+To make the decision, we compute the expected utility given the uncertainty in $\theta:$ 
+
+\[
+E^\pi[U(\theta, a_1)] = \pi(\theta_1)U(r_1) + \pi(\theta_2)U(r_2)\\
+= 0.5(0.9) + 0.5(0.95) = 0.925 \\
+E^\pi[U(\theta, a_2)] = \pi(\theta_1)U(r_3) + \pi(\theta_2)U(r_4)\\
+= 0.5(1) + 0.5(0) = 0.5
+\]
+
+Clearly, the best choice is to choose action one, since it has higher expected utility given the uncertainty in winning the gamble. 
 
 ---
 
@@ -63,4 +96,17 @@ The concept of a loss function is fairly intuitive, defining the loss as the neg
 
 The author notes that if the state of nature $\theta$ is a statistical parameter, then $U(\theta, a)$ really is the expected utility of the random variable $Z$ that encompasses not only the true parameter value, but also the random realization of an outcome based on that parameter. For example, if $\theta$ is the proportion of a population that would buy a certain product, then the reward and therefore expected utility of an action is a function of $\theta$ as well as of the number of people who *actually do* buy the product based on various economic factors. The state of the economy is one random part that determines $Z$ and therefore influences the utility of an action given state of nature $\theta$. 
 
-The author also outlines several standard loss functions, including linear and squared-error loss. 
+The author also outlines several standard loss functions, including linear and squared-error loss.
+
+## Standard loss functions 
+
+Berger outlines three standard loss functions as possible approximations for the true loss. These are often used in practice: 
+
+* Squared-error loss: $L(\theta, a) = (\theta - a)^2$
+* Absolute error loss: $L(\theta, a) = |\theta - a|$
+* Zero-one loss: $L(\theta_i, a_j) = I(i \neq j)$
+
+Berger highlights these, but argues that ideally the loss function should come from defining a utility function first, then defining loss as negative utility. 
+However, given the difficulty in defining a utility function in a simple univariate scenario, it is understandble why in more complex situations a standard loss would be used -- what would happen if we had vector-valued rewards or interactions between elements of different rewards? 
+
+
