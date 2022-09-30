@@ -1,0 +1,28 @@
+---
+title: 'Chapter 3: Determining the prior distrubution of $\theta$'
+author: "Jacob Oram"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction  & the idea of "subjective" probability 
+
+Berger outlines a simple and elegant argument for what he calls "subjective probability", and sets the stage for the rest of the chapter which focuses on carefully eliciting a prior distribution. 
+The argument hinges on considering probability statements about events that occur once. 
+For example, if we consider $\theta$ to be the unemployment rate next year, it is difficult to imagine the statement $P(3\% < \theta < 4\%) = 0.3$ making sense in terms of repeated i.i.d. trials because $\theta$ is a unique, one-time event.
+On the other hand, it *is* easy to imagine this statement where $\theta$ is random, and the probability statement about the interval it lives in is a statement about a personal degree of belief. 
+
+The section closes with some notes of caution about elciting a prior: first, ensuring consistency is critical, and second, we must use caution when eliciting priors for very small probabilities. 
+
+## Determination of the prior density 
+
+Berger outlines four methods for determining the prior. 
+The first two involve sketching the distribution (either by drawing a histogram of the distribution of $\theta$ or by sketching the relative likelihood of various parameter values). 
+The third method is the common 'matching a given functional form', which boils down to finding the values of hyperparameters (e.g., if $p(\theta | \mu, \sigma) = Normal(\mu, \sigma)$, then choose $\mu$ and $\sigma$ appropriately). One possibility is choosing values after computing moments of the distribution, but Berger discourages this approach since the tails of an unbounded parameter space can have a large effect on its moments. Instead, he encourages choosing values for the hyperparameters based on quantiles (e.g., what is $Pr(\theta < 0)$?). 
+This is similar to the final approach, which is to sketch the CDF of $\theta.$ 
+
+## Noninformative Priors 
