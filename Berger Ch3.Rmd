@@ -9,6 +9,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+This was a much more surface-level read than Chapters 1 and 2, because much of this felt redundant with what I learned in 532. 
+
 ## Introduction  & the idea of "subjective" probability 
 
 Berger outlines a simple and elegant argument for what he calls "subjective probability", and sets the stage for the rest of the chapter which focuses on carefully eliciting a prior distribution. 
@@ -26,3 +28,19 @@ The third method is the common 'matching a given functional form', which boils d
 This is similar to the final approach, which is to sketch the CDF of $\theta.$ 
 
 ## Noninformative Priors 
+
+This section is concerned with choosing noninformative priors and includes a discussion of the problem of noninformative priors that are not invariant under transformation. 
+This includes a discussion of the Jeffrey's prior. 
+
+## Methods of selecting a prior
+
+One interesting method for selection is what Berger calls the *ML-II* method of prior selection. First, define $\Gamma$ to be the class of potential priors. The *ML-II* approach to prior selection is similar to a prior predictive check: choose the prior $\hat{\pi}$ such that the resulting marginal distribution of the data, is as plausible as it can be. Formally, we seek $\hat{\pi}$ such that 
+
+$$m(x|\hat{\pi}) = \sup_{\pi \in \Gamma} m(x|\pi),$$
+
+where $m(x|\pi)$ is the marginal distribution of x under the prior $\pi.$ Essentially the idea is that if we treat the probability density of the data x as being definitely known (e.g., we have strong enough suspicion that we feel comfortable claiming that we "know" that the data are normally distributed, say), the only way to produce a marginal distribution for the data that matches our observed sample more closely (i.e., is more likely) is to change the prior. The difference is that this definition seeks the prior that maximizes the value of $m$. 
+
+## Hierarchical priors 
+
+If we have structural (e.g., that the parameters $\theta_i$ should be independent and identically distributed, or if we know the functional form of the prior) and subjective knowledge to inform priors then, two stages can be applied to form "hierarchical priors". The first is to choose the class of priors $$\Gamma = \{\pi_0(\theta|\lambda): \pi_0 \text{ is of a certain structure and } \lambda \in \Lambda \},$$ and then the second stage would be to put a prior on $\lambda.$ 
+

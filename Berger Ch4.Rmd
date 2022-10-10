@@ -1,0 +1,48 @@
+---
+title: 'Chapter 4: Bayesian Analysis'
+author: "Jacob Oram"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+This is a massive chapter, because it covers the entire Bayesian paradigm. Perhaps because this book was written in 1985, the first section of this chapter begins with seven detailed arguments in favor of using Bayesian analysis (perhaps useful for a future Stat 532 course debate). The second section introduces the concept of a posterior distribution. The third section is about Bayesian inference. I focused my reading on section four, which is concerned with Bayesian decision theory. 
+
+## Definitions 
+
+--- 
+__Definition 8__: The *posterior expected loss* of an action $a$, is 
+\[
+\rho(\pi(\theta|x), a) = \int_\Theta L(\theta, a) \pi(\theta|x)d\theta,
+\]
+
+where $\pi(\theta|x)$ is the posterior distribution on $\theta.$ 
+---
+
+Essentially, we are averaging the loss of $a$ over all the possible states of nature $\theta.$ With this updated definition (see Chapter 1), we can also define the *posterior Bayes action* 
+
+--- 
+__Definition 9__: The *posterior Bayes action*, $\delta^\pi(x)$ is any action $a \in \mathscr{A}$ which minimizes the posterior expected loss, $\rho(\pi(\theta|x),a).$ 
+--- 
+
+---
+__Definition 6__: (Chapter 1) The *Bayes risk* of a decision rule $\delta,$ with respect to posterior distribution $\pi$ on $\Theta$ is defined as 
+\[
+r(\pi, \delta) = E^\pi[R(\theta, \delta)].
+\]
+
+The decision rule $\delta^\pi$ which minimizes $r(\pi, \delta)$ is called a *Bayes Rule* and the quantity $r(\pi) = r(\pi, \delta^\pi)$ is called the *Bayes risk* for $\pi$.
+---
+
+
+
+## Key Results 
+
+## Section 4.4: Bayesian Decision Theory 
+
+
