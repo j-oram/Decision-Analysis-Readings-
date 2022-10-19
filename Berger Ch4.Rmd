@@ -15,34 +15,68 @@ This is a massive chapter, because it covers the entire Bayesian paradigm. Perha
 
 ## Definitions 
 
---- 
-__Definition 8__: The *posterior expected loss* of an action $a$, is 
+<hr>
+
+__Definition 8a__: The *posterior expected loss* of an action $a$, is 
+
 \[
 \rho(\pi(\theta|x), a) = \int_\Theta L(\theta, a) \pi(\theta|x)d\theta,
 \]
 
 where $\pi(\theta|x)$ is the posterior distribution on $\theta.$ 
----
+
 
 Essentially, we are averaging the loss of $a$ over all the possible states of nature $\theta.$ With this updated definition (see Chapter 1), we can also define the *posterior Bayes action* 
 
---- 
-__Definition 9__: The *posterior Bayes action*, $\delta^\pi(x)$ is any action $a \in \mathscr{A}$ which minimizes the posterior expected loss, $\rho(\pi(\theta|x),a).$ 
---- 
+__Definition 8b__: The *posterior Bayes action*, $\delta^\pi(x)$ is any action $a \in \mathscr{A}$ which minimizes the posterior expected loss, $\rho(\pi(\theta|x),a).$ 
+<hr>
 
----
+
+
+<hr>
 __Definition 6__: (Chapter 1) The *Bayes risk* of a decision rule $\delta,$ with respect to posterior distribution $\pi$ on $\Theta$ is defined as 
 \[
 r(\pi, \delta) = E^\pi[R(\theta, \delta)].
 \]
 
 The decision rule $\delta^\pi$ which minimizes $r(\pi, \delta)$ is called a *Bayes Rule* and the quantity $r(\pi) = r(\pi, \delta^\pi)$ is called the *Bayes risk* for $\pi$.
----
 
 
+
+Note to self: the Bayes risk is obtained by first averaging the loss over the data X (to obtain the risk), then averaging the risk over the distribution for $\theta:$ 
+
+\[
+r(\pi, \delta) = \int_\Theta R(\theta, \delta)\pi(\theta)d\theta \\
+= \int_\Theta \left[ \int_\mathscr{X} L(\theta, \delta(x)) f(x|\theta)dx \right] d\theta
+\]
+
+<hr>
+__Definition 9__: If $\pi$ is an improper prior, but $\delta^\pi(x)$ is an action which minimizes the expected posteriior loss $\rho(\pi(\theta|x), \delta(x))$ for each $x$ with $m(x)>0$, then $\delta^\pi$ is called a *generalized Bayes rule*. 
+<hr>
 
 ## Key Results 
 
+__Result 2__
+If $\delta$ is a nonrandomized estimator, then 
+\[ r(\pi, \delta) = \int_{\{x:m(x)>0\}} \rho(\pi(\theta|x),\delta(x))m(x)dx\]
+
+__Result 1__
+A Bayes rule $\delta^\pi$ (i.e., a rule minimizing $r(\pi, \delta))$ can be found by choosing, for each $x$ such that $m(x) > 0$, an action which minimizes the posterior expected loss. The rule can be defined arbitrarily when $m(x) = 0$.
+
+The results are listed out of order because 1 follows from 2. Together they imply that minimizing the (frequentist) Bayes risk $r(\pi, \delta)$ is essentially the same problem as minimizing the expected posterior loss. 
+
 ## Section 4.4: Bayesian Decision Theory 
+
+
+After taking the reader through the above results and definitions, Berger outlines the Bayes rules for estimation with several standard loss functions. 
+In estimation, the Bayes rule is the estimator denoted as $a$ or $\delta^\pi$ that minimizes posterior expected loss. 
+I did not write up the results here because they would are examples more than key theoretical results. 
+
+The next subsubsection involves finite action problems; these include hypothesis testing and (more interestingly for modern problems) classification. 
+The use of decision analysis in classification is illustrated with an example (p.166). 
+
+
+
+
 
 
