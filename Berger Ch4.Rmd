@@ -75,8 +75,33 @@ I did not write up the results here because they would are examples more than ke
 The next subsubsection involves finite action problems; these include hypothesis testing and (more interestingly for modern problems) classification. 
 The use of decision analysis in classification is illustrated with an example (p.166). 
 
+## Section 4.5: Empirical Bayes 
 
+Briefly, empirical Bayes problems are ones where known relationships between the parameter values allow the use of the data to inform the prior distribution. 
+An example is in a multi-level model, where parameters $\theta_i$ arise from a common population with its own distribution controlled by hyperparameters. 
+The trick is that the population model is then interpreted as the prior. 
 
+An example is given in subsection 4.5.2, which focuses on parametric methods for empirical Bayes: 
 
+Suppose that $X_i$ are realized test scores of students. The assumed likelihood for these data is
+
+\[
+X_i \sim N(\theta_i, \sigma^2_f) \\
+\theta_i \sim N(\mu_\pi, \sigma^2_\pi),
+\]
+
+where $\theta_i$ is assumed to be the true ability level of individual $i$ and $\sigma_f^2$ is (known) reliability of test scores. 
+We assume that these true ability levels are normally distributed in the population, with mean $\mu_pi$ and variance $\sigma^2_\pi$ (both of which are unknown). 
+The empirical Bayes approach is concerned with estimating $\mu_\pi$ and $\sigma^2_\pi$ from the data using the marginal distribution $m(x)$. 
+This follows somewhat closely with the hierarchical model laid out in Gelman et al., (2013), section 5.4 and the eight schools example in section 5.5. 
+
+## 4.6 Hierarchical Bayes 
+
+I skipped this section because I prefer the treatment in Gelman et al., (2013). 
+
+## 4.7 Bayesian Robustness 
+
+This section addresses robustness of Bayesian analysis to prior specification. 
+There is a very short discussion of robustness of decision analysis to the choice of loss function at the very end of the section, but the authors argue that the choice of prior is far more challenging with greater implications for resulting decisions. 
 
 
