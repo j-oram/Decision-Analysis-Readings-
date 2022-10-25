@@ -54,6 +54,20 @@ r(\pi, \delta) = \int_\Theta R(\theta, \delta)\pi(\theta)d\theta \\
 __Definition 9__: If $\pi$ is an improper prior, but $\delta^\pi(x)$ is an action which minimizes the expected posteriior loss $\rho(\pi(\theta|x), \delta(x))$ for each $x$ with $m(x)>0$, then $\delta^\pi$ is called a *generalized Bayes rule*. 
 <hr>
 
+__Definition 10__: The *$\Gamma$-posterior expected loss of $a_0$* is 
+
+\[
+\rho_\Gamma(a_0) = \sup_{\pi \in \Gamma} \rho(\pi(\theta|x), a_0),
+\]
+
+where $\Gamma$ is a class of possible prior distributions on $\theta$. 
+<hr>
+
+__Definition 11__: An action $a_0$ is said to be *$\epsilon$-posterior robust* with respect to prior class $\Gamma$ if , for all $\pi \in \Gamma$, 
+\[
+\left| \rho(\pi(\theta|x), a_0) - \inf_a \rho(\pi(\theta|x), a)\right| \leq \epsilon 
+\]
+
 ## Key Results 
 
 __Result 2__
@@ -102,6 +116,20 @@ I skipped this section because I prefer the treatment in Gelman et al., (2013).
 ## 4.7 Bayesian Robustness 
 
 This section addresses robustness of Bayesian analysis to prior specification. 
-There is a very short discussion of robustness of decision analysis to the choice of loss function at the very end of the section, but the authors argue that the choice of prior is far more challenging with greater implications for resulting decisions. 
+There is a very short discussion of robustness of decision analysis to the choice of loss function at the very end of the section, but the author argues that the choice of prior is far more challenging with greater implications for resulting decisions. 
+
+More interesting is how posterior robustness is framed in terms of actions $a$. 
+There seems to be an implicit assumption that the action $a$ is a choice of estimate for the parameter of interest, but I see no reason why we would not be able to extend this to possible actions after inference has been made. 
+The idea of posterior expected loss for a class of priors (as given in Definition 10 above) can be extended to consider a range of values for the posterior expected losses for action $a_0$:
+
+\[
+\left(
+\inf_{\pi \in \Gamma} \rho(\pi(\theta|x), a_0), \sup_{\pi \in \Gamma} \rho(\pi(\theta|x), a_0)
+\right).
+\]
+
+
+
+
 
 
