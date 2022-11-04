@@ -47,7 +47,7 @@ Note to self: the Bayes risk is obtained by first averaging the loss over the da
 
 \[
 r(\pi, \delta) = \int_\Theta R(\theta, \delta)\pi(\theta)d\theta \\
-= \int_\Theta \left[ \int_\mathscr{X} L(\theta, \delta(x)) f(x|\theta)dx \right] d\theta
+= \int_\Theta \left[ \int_\mathscr{X} L(\theta, \delta(x)) f(x|\theta)dx \right] \pi(\theta) d\theta
 \]
 
 <hr>
@@ -129,6 +129,17 @@ The idea of posterior expected loss for a class of priors (as given in Definitio
 \]
 
 
+## 4.8 Admissability of Bayes Rules 
+
+Generally, a Bayes rule is always admissible (i.e., there does not exist a different rule $\delta$ with lower risk for all $\theta \in \Theta$), because if there was, that alternative rule would also have lower Bayes risk $r(\pi, \delta).$ The following three theorems are proven by contradiction using this line of reasoning. 
+
+__Theorem 7 (9)__: Assume that $\Theta$ is discrete (say $\Theta = \{\theta_1, \theta_2, \dots\}$) and that the prior $\pi$ gives positive mass to each $\theta_i \in \Theta$. A Bayes rule $\delta^\pi$ is then admissible with respect to $\pi$. 
+
+The statement for theorem 9 is essentially the same, but for a continuous parameter space. In this case, the theorem assumes that the risk function is continuous and that the prior gives positive probability to any open subset of $\Theta.$ 
+
+__Theorem 8__: If a Bayes rule is unique, then it is admissible. 
+
+The last theorem seems obvious; if it was not unique, then 
 
 
 
