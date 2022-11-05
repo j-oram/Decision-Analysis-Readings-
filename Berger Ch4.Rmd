@@ -139,7 +139,12 @@ The statement for theorem 9 is essentially the same, but for a continuous parame
 
 __Theorem 8__: If a Bayes rule is unique, then it is admissible. 
 
-The last theorem seems obvious; if it was not unique, then 
+
+Berger also discusses generalized Bayes rules, which are Bayes rules from an improper prior. 
+He mentions that although it's less clear what we mean exactly by $r(\pi, \delta)$ if the prior is improper, the Bayes rule minimizing $r(\pi, \delta)$ is still found by minimizing posterior expected loss. 
+When the expected risk, averaging over prior uncertainty in $\theta$ is not finite (that is, when $r(\pi, \delta) = \infty$, which is not uncommon when the prior is improper), even natural Bayes rules (such as the posterior mean in estimation problems) may not be admissible.  
+
+
 
 
 
