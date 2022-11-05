@@ -25,3 +25,7 @@ The authors introduce statistical decision theory (SDT) for ecologists, noting t
 Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology -- essentially, this is briefly restating the first four chapters of @berger85. 
 Following this overview, the @williams16 address two classes of problems: choosing an estimator to be reported ("optimal point estimation") and choosing a management strategy for a natural resource ("optimal resource management"). 
 
+<hr> 
+
+## References 
+
