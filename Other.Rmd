@@ -1,0 +1,27 @@
+---
+title: "Other readings"
+author: "Jacob Oram"
+date: "`r Sys.Date()`"
+output: html_document
+bibliography: BDA.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This chapter covers other readings, including papers that have applied decision analysis in ecology and conservation biology and the ninth chapter of *Bayesian Data Analysis* [@gelman13]. 
+
+## [@wade00] Bayesian Methods in Conservation Biology 
+
+The main thrust of this article is that practitioners in conservation biology may find Bayesian methods far more appropriate for biological data, easier to handle and interpret when presenting results, with prior information explicitly incorporated to improve scientific transparency. 
+The author first provides a simple regression example to demonstrate a situation in which Bayesian methods yield far more reasonable results (in the sense that it "matches what most people would conclude without using statistics"). 
+The regression example is then included in a formal decision analysis, developing the loss functions directly (as opposed to defining a utility function and then defining $L = -U(\theta, a)$, which is the approach that Berger advocates for). 
+Although this is a very simple example, it provides an excellent high-level overview of Bayesian analysis and decision theory, with a clear argument that these methods will ultimately be easier to understand and communicate when conducting conservation-oriented studies in biology and ecology. 
+
+## [@williams16] Combining statistical inference and decisions in ecology 
+
+The authors introduce statistical decision theory (SDT) for ecologists, noting that it has been widely applied in operations research as well as in statistics and mathematics. [In statistics, a decision rule could be a choice of estimator, such as the posterior mean; @berger85]. 
+Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology -- essentially, this is briefly restating the first four chapters of @berger85. 
+Following this overview, the @williams16 address two classes of problems: choosing an estimator to be reported ("optimal point estimation") and choosing a management strategy for a natural resource ("optimal resource management"). 
+
