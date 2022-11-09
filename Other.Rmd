@@ -24,6 +24,28 @@ Although this is a very simple example, it provides an excellent high-level over
 The authors introduce statistical decision theory (SDT) for ecologists, noting that it has been widely applied in operations research as well as in statistics and mathematics. [In statistics, a decision rule could be a choice of estimator, such as the posterior mean; @berger85]. 
 Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology -- essentially, this is briefly restating the first four chapters of @berger85. 
 Following this overview, the @williams16 address two classes of problems: choosing an estimator to be reported ("optimal point estimation") and choosing a management strategy for a natural resource ("optimal resource management"). 
+For the problem of optimal point estimation, the authors note that the correctly specifying the loss function is critical for appropriate inference. 
+
+The authors illustrate optimal resource management through an example wherein land managers must decide the burn interval to optimize cumulative abundance of Henslow's Sparrows at Big Oaks National Wildlife Refuge in southeastern Indiana.  
+This example provides a beautiful example of constructing a loss function from first principles (e.g., the statement that more frequent burn intervals are more costly and should have higher loss). 
+The model used in the case study is 
+
+\[
+y_{j,t} \sim Poisson(A_j\lambda_{j,t}) \\
+log(\lambda_{j,t}) = x_{j,t}\boldsymbol{\beta} + \eta_j \\
+\]
+
+where $y_{j,t}$ is the count of sparrows at site $j$ during time $t$, $A_j$ is the area of site $j = 1, 2, \dots, 8$, $\lambda_{j,t}$ is the unknown density of Henslows sparrows at site $j$ during time $t$, and is a function of regression coefficients $\boldsymbol{\theta} = (\boldsymbol{\beta \eta})^T$. The covariate $x$ represents the number of summers since the last burn. The random effect $\eta_j$ is a random effect that adjusts the density of Henslows sparrows at each site. The priors for this model were 
+
+\[
+\boldsymbol{\beta} \sim Normal(\boldsymbol{\mu}, \sigma^2I) \\
+\eta_j \sim Normal(0,1)
+\]
+
+with $\mu^T = (-5, 2.5,0.2, 0.2)$ and $\sigma^2 = 10$ being informed by a prior study.
+The abundance over which posterior uncertainty is estimated is a derived quantity resulting from $\boldsymbol{\theta}$. 
+
+
 
 <hr> 
 
