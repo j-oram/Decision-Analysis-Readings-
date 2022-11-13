@@ -45,7 +45,19 @@ where $y_{j,t}$ is the count of sparrows at site $j$ during time $t$, $A_j$ is t
 with $\mu^T = (-5, 2.5,0.2, 0.2)$ and $\sigma^2 = 10$ being informed by a prior study.
 The abundance over which posterior uncertainty is estimated is a derived quantity resulting from $\boldsymbol{\theta}$. 
 
+The authors' case study utilized a standard loss function (linear loss), which is in keeping with their advice to practitioners. 
+They acknowledge that choosing a loss function is just as subjective as choosing a likelihood and a prior, but the body of literature is many times larger for the latter two. 
+In cases where information about potential loss is lacking, the authors suggest that standard loss functions are a good starting point. 
+They argue that the most important aspects to consider when constructing a loss function are the shape (e.g., convex or concave) and the symmetry. 
 
+## [@dorazio03] Bayesian inference and decision theory: A framework for decision making in natural resource management
+
+The authors describe the link between Bayesian methods, decision analysis and natural resource management. 
+The introduction, which does not include the in-depth description of Bayesian decision theoretical machinery [as in @williams16], makes the argument essentially for the adaptation of Bayesian methods (in general; this article is old). 
+However, the main thrust of the article appears very similar to @williams16. 
+
+Notes: 
+* This article touches on adaptive monitoring and makes an appeal (in the intro) to the sequential updating of state of knowledge possible in the bayesian paradigm as a reason for applying BDA in ecology. 
 
 <hr> 
 
