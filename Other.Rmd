@@ -2,7 +2,9 @@
 title: "Other readings"
 author: "Jacob Oram"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  bookdown::html_document2:
+    toc: false 
 bibliography: BDA.bib
 ---
 
@@ -12,14 +14,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This chapter covers other readings, including papers that have applied decision analysis in ecology and conservation biology and the ninth chapter of *Bayesian Data Analysis* [@gelman13]. 
 
-## [@wade00] Bayesian Methods in Conservation Biology 
+# [@wade00] Bayesian Methods in Conservation Biology 
 
 The main thrust of this article is that practitioners in conservation biology may find Bayesian methods far more appropriate for biological data, easier to handle and interpret when presenting results, with prior information explicitly incorporated to improve scientific transparency. 
 The author first provides a simple regression example to demonstrate a situation in which Bayesian methods yield far more reasonable results (in the sense that it "matches what most people would conclude without using statistics"). 
 The regression example is then included in a formal decision analysis, developing the loss functions directly (as opposed to defining a utility function and then defining $L = -U(\theta, a)$, which is the approach that Berger advocates for). 
 Although this is a very simple example, it provides an excellent high-level overview of Bayesian analysis and decision theory, with a clear argument that these methods will ultimately be easier to understand and communicate when conducting conservation-oriented studies in biology and ecology. 
 
-## [@williams16] Combining statistical inference and decisions in ecology 
+# [@williams16] Combining statistical inference and decisions in ecology 
 
 The authors introduce statistical decision theory (SDT) for ecologists, noting that it has been widely applied in operations research as well as in statistics and mathematics. [In statistics, a decision rule could be a choice of estimator, such as the posterior mean; @berger85]. 
 Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology -- essentially, this is briefly restating the first four chapters of @berger85. 
@@ -50,7 +52,7 @@ They acknowledge that choosing a loss function is just as subjective as choosing
 In cases where information about potential loss is lacking, the authors suggest that standard loss functions are a good starting point. 
 They argue that the most important aspects to consider when constructing a loss function are the shape (e.g., convex or concave) and the symmetry. 
 
-## [@dorazio03] Bayesian inference and decision theory: A framework for decision making in natural resource management
+# [@dorazio03] Bayesian inference and decision theory: A framework for decision making in natural resource management
 
 The authors describe the link between Bayesian methods, decision analysis and natural resource management. 
 The introduction, which does not include the in-depth description of Bayesian decision theoretical machinery [as in @williams16], makes the argument essentially for the adaptation of Bayesian methods (in general; this article is old). 
@@ -58,6 +60,39 @@ However, the main thrust of the article appears very similar to @williams16.
 
 Notes: 
 * This article touches on adaptive monitoring and makes an appeal (in the intro) to the sequential updating of state of knowledge possible in the bayesian paradigm as a reason for applying BDA in ecology. 
+
+
+# [@varis99] Learning Bayesian decision analysis by doing: lessons from environmental and natural resources management 
+
+The authors highlight several case studies to summarize their learning from applying Bayesian decision analysis. 
+The decision analytic frameworks they use in these case studies are based on influence diagrams and belief networks, as summarized in @varis97 (this work was originally developed by Judea Pearl and others in the late 1980's). 
+Among the lessons learned (there are many, see the discussion section), some key highlights are: 
+
+* each modification of the model structure redefines the problem
+* structural uncertainty of a deterministic model can be modeled
+* Bayesian decision analysis is not just parameter estimation
+
+Some of these highlights are fairly apparent or apply outside of the BDA context. 
+The last point seems obvious but it is interesting because it is related to a comment in a previous paper [@varis97]: when the authors equate Bayesian decision analysis with network based methods "the entire model - *the hypothesis space* - is subjected to Bayesian analysis, not only the parameter space". 
+This statement makes sense when we consider that according to @berger85, in a hypothesis test setting the reject/FTR binary is itself a set of actions that are evaluated based on expected posterior loss. 
+However, in the formulation of @berger85, the entire model is not subjected to Bayesian analysis -- we still assume a likelihood function, so there is some structural input from the statistician about how the data arise. 
+This appears to be a discrepancy between how BDA is described by @varis99 and @berger85. 
+
+Another source of discrepancy (or perhaps a lack of understanding on my part) arises from trying to connect networks to posterior loss. 
+While the components of the network models match the types of situations described by @berger85 (e.g., an objective function, a decision to be made, an unknown state of nature with a probability distribution assigned to possible values), I haven't formally made the connection yet with this formulation of a decision problem with minimizing posterior loss. 
+One point of confusion for me is the arc from the random "prior" node to the final satisfaction node (see Figure \@ref(fig:netex)). 
+I read this arc as a statement: "if the state of nature truly is $\theta^\star$, then my satisfaction (i.e., expected loss, utility), after gathering data from screening and making a decision will be $X$." 
+However, in the formulation of @berger85, loss associated with an action is influenced by the true value of $\theta$ only through the posterior distribution, which would correspond with the three right hand arcs (from Environmental impacts to screening to EIA to satisfiction) in Figure \@ref(fig:netex). 
+Clearly the true 
+
+<hr>
+```{r netex, echo = FALSE, fig.cap="An annotated reproduction of Figure 1a from @varis97", out.width='110%'}
+knitr::include_graphics("netex/Slide1.png")
+```
+<hr>
+
+
+
 
 <hr> 
 
