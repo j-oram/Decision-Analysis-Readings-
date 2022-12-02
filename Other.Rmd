@@ -56,10 +56,15 @@ They argue that the most important aspects to consider when constructing a loss 
 
 The authors describe the link between Bayesian methods, decision analysis and natural resource management. 
 The introduction, which does not include the in-depth description of Bayesian decision theoretical machinery [as in @williams16], makes the argument essentially for the adaptation of Bayesian methods (in general; this article is old). 
-However, the main thrust of the article appears very similar to @williams16. 
+However, the main thrust of the article appears very similar to @williams16; a key difference is that the authors provide an extended example wherein the model is autoregressive and parameter estimates are repeatedly updated over time.  
+The authors discuss not only finding the expected loss for a single future time (based on the posterior predictive distribution), but also finding a sequence of optimal actions for future time steps.
 
 Notes: 
-* This article touches on adaptive monitoring and makes an appeal (in the intro) to the sequential updating of state of knowledge possible in the bayesian paradigm as a reason for applying BDA in ecology. 
+
+* This paper directly addresses decision making for adaptive monitoring in the sense that it focuses on an example where the same decision is repeatedly made at regular intervals.
+Through the sequential updating of parameter estimates over time, managers learn over time what determines optimal actions.  
+* The authors assume that the optimal habitat state for the hypothetical migratory birds in their example is known with certainty. 
+* The authors do not consider cost of management actions in their loss function. 
 
 
 # [@varis99] Learning Bayesian decision analysis by doing: lessons from environmental and natural resources management 
@@ -83,7 +88,6 @@ While the components of the network models match the types of situations describ
 One point of confusion for me is the arc from the random "prior" node to the final satisfaction node (see Figure \@ref(fig:netex)). 
 I read this arc as a statement: "if the state of nature truly is $\theta^\star$, then my satisfaction (i.e., expected loss, utility), after gathering data from screening and making a decision will be $X$." 
 However, in the formulation of @berger85, loss associated with an action is influenced by the true value of $\theta$ only through the posterior distribution, which would correspond with the three right hand arcs (from Environmental impacts to screening to EIA to satisfiction) in Figure \@ref(fig:netex). 
-Clearly the true 
 
 <hr>
 ```{r netex, echo = FALSE, fig.cap="An annotated reproduction of Figure 1a from @varis97", out.width='110%'}
