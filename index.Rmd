@@ -1,0 +1,24 @@
+---
+title: "Bayesian Decision Analysis Readings"
+author: "Jacob Oram"
+date: "`r Sys.Date()`"
+output: html_document
+bibliography:
+  BDA.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This site is a collection of notes I've taken on Bayesian decision analysis. 
+Most of these notes come from @berger85, but the "Other" tab contains an annotated bibliography of applied readings that I've completed. 
+
+This document is not exhaustive because Bayesian decision analysis fits into the domains of many other fields; anywhere that data is used for decision making, BDA (or some other related decision-making framework, such as multicriteria decision analysis (MCDA)) appears. 
+Because of this, I've skimmed many other sources including the 2010 book by Jim Smith named *Bayesian Decision Analysis: Principles and Practice*. 
+Many of these other sources frame BDA from the perspective of directed acyclic graphs and influence diagrams, with the statistics buried under other layers of each papers' conceptual framework. 
+I've mostly omitted these. 
+
+As a side note, it appears that Bayesian decision analysis has been employed in many ecological statistics papers, but it has yet to really catch on.
+In early papers (some from the 1960s and 1970s), this is likely because the calculations (done by hand!) required some strong assumptions to be tractable. 
+More recently, it appears to be a question of implementation with MCMC [see @dorazio03] and the inherent difficulty of specifying a loss function (beyond choosing a standard loss). 
