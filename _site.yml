@@ -1,0 +1,11 @@
+name: "bda-readings"
+navbar:
+  title: "Bayesian Decision Analysis Readings"
+left:
+  - text: "Intro"
+href: index.html
+  - text: "Other"
+href: Other.html
+  output:
+  html_document:
+  theme: lumen
