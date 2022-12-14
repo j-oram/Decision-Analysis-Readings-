@@ -95,7 +95,9 @@ knitr::include_graphics("netex/Slide1.png")
 ```
 <hr>
 
+## Highlights and select chapters from @smith10 
 
+The book from @smith10 about Bayesian decision analysis is as applied as it gets. 
 
 
 <hr> 

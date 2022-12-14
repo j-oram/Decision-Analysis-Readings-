@@ -2,9 +2,6 @@
 title: "Bayesian Decision Analysis Readings"
 author: "Jacob Oram"
 date: "`r Sys.Date()`"
-output: html_document
-bibliography:
-  BDA.bib
 ---
 
 ```{r setup, include=FALSE}
