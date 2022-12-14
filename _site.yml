@@ -1,8 +1,8 @@
 name: "bda-readings"
 navbar:
   title: "Bayesian Decision Analysis Readings"
-left:
+  left:
   - text: "Intro"
-href: index.html
-- text: "Other"
-href: Other.html
+    href: index.html
+  - text: "Other"
+    href: Other.html
