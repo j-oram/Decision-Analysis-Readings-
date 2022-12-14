@@ -16,3 +16,6 @@ I've mostly omitted these.
 As a side note, it appears that Bayesian decision analysis has been employed in many ecological statistics papers, but it has yet to really catch on.
 In early papers (some from the 1960s and 1970s), this is likely because the calculations (done by hand!) required some strong assumptions to be tractable. 
 More recently, it appears to be a question of implementation with MCMC [see @dorazio03] and the inherent difficulty of specifying a loss function (beyond choosing a standard loss). 
+
+
+## References
