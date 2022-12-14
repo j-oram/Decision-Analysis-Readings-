@@ -2,6 +2,8 @@
 title: "Bayesian Decision Analysis Readings"
 author: "Jacob Oram"
 date: "`r Sys.Date()`"
+bibliography:
+  BDA.bib
 ---
 
 

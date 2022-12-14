@@ -59,6 +59,28 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 
 
@@ -277,9 +299,9 @@ $(document).ready(function () {
 
 
 <p>This site is a collection of notes I’ve taken on Bayesian decision
-analysis. Most of these notes come from <span
-class="citation">@berger85</span>, but the “Other” tab contains an
-annotated bibliography of applied readings that I’ve completed.</p>
+analysis. Most of these notes come from <span class="citation">Berger
+(1985)</span>, but the “Other” tab contains an annotated bibliography of
+applied readings that I’ve completed.</p>
 <p>This document is not exhaustive because Bayesian decision analysis
 fits into the domains of many other fields; anywhere that data is used
 for decision making, BDA (or some other related decision-making
@@ -295,11 +317,25 @@ employed in many ecological statistics papers, but it has yet to really
 catch on. In early papers (some from the 1960s and 1970s), this is
 likely because the calculations (done by hand!) required some strong
 assumptions to be tractable. More recently, it appears to be a question
-of implementation with MCMC <span class="citation">[see
-@dorazio03]</span> and the inherent difficulty of specifying a loss
+of implementation with MCMC <span class="citation">(see Dorazio and
+Johnson 2003)</span> and the inherent difficulty of specifying a loss
 function (beyond choosing a standard loss).</p>
-<div id="references" class="section level2">
-<h2>References</h2>
+<div id="references" class="section level2 unnumbered">
+<h2 class="unnumbered">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-berger85" class="csl-entry">
+Berger, James O. 1985. <em>Statistical Decision Theory and Bayesian
+Analysis</em>. 2nd ed. Springer Series in Statistics. New York:
+Springer-Verlag.
+</div>
+<div id="ref-dorazio03" class="csl-entry">
+Dorazio, Robert M., and Fred A. Johnson. 2003. <span>“BAYESIAN INFERENCE
+AND DECISION THEORY—a FRAMEWORK FOR DECISION MAKING IN NATURAL RESOURCE
+MANAGEMENT.”</span> <em>Ecological Applications</em> 13 (2): 556–63.
+https://doi.org/<a
+href="https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2">https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2</a>.
+</div>
+</div>
 </div>
 
 
