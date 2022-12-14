@@ -4,9 +4,6 @@ author: "Jacob Oram"
 date: "`r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 This site is a collection of notes I've taken on Bayesian decision analysis. 
 Most of these notes come from @berger85, but the "Other" tab contains an annotated bibliography of applied readings that I've completed. 
