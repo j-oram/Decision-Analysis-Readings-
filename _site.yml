@@ -1,6 +1,7 @@
 name: bda-readings
+output_dir: "."
 navbar:
-  title: Bayesian Decision Analysis Readings
+  title: "Bayesian Decision Analysis Readings"
   left:
   - text: "Intro"
     href: index.html
@@ -9,4 +10,5 @@ navbar:
 output: 
   html_document:
     toc: false
+    theme: lumen 
     
