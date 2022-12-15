@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-12-15" />
 
-<title>Chapter 3: Determining the prior distrubution of \theta</title>
+<title>Berger (1985) Chapter 1: Key Definitions and Concepts</title>
 
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -59,6 +59,28 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 
 
@@ -278,98 +300,89 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Chapter 3: Determining the prior
-distrubution of <span class="math inline">\(\theta\)</span></h1>
+<h1 class="title toc-ignore"><span class="citation">Berger (1985)</span>
+Chapter 1: Key Definitions and Concepts</h1>
 <h4 class="author">Jacob Oram</h4>
 <h4 class="date">2022-12-15</h4>
 
 </div>
 
 
-<p>This was a much more surface-level read than Chapters 1 and 2,
-because much of this felt redundant with what I learned in 532.</p>
-<div id="introduction-the-idea-of-subjective-probability"
-class="section level2">
-<h2>Introduction &amp; the idea of “subjective” probability</h2>
-<p>Berger outlines a simple and elegant argument for what he calls
-“subjective probability”, and sets the stage for the rest of the chapter
-which focuses on carefully eliciting a prior distribution. The argument
-hinges on considering probability statements about events that occur
-once. For example, if we consider <span
-class="math inline">\(\theta\)</span> to be the unemployment rate next
-year, it is difficult to imagine the statement <span
-class="math inline">\(P(3\% &lt; \theta &lt; 4\%) = 0.3\)</span> making
-sense in terms of repeated i.i.d. trials because <span
-class="math inline">\(\theta\)</span> is a unique, one-time event. On
-the other hand, it <em>is</em> easy to imagine this statement where
-<span class="math inline">\(\theta\)</span> is random, and the
-probability statement about the interval it lives in is a statement
-about a personal degree of belief.</p>
-<p>The section closes with some notes of caution about elciting a prior:
-first, ensuring consistency is critical, and second, we must use caution
-when eliciting priors for very small probabilities.</p>
+<div id="intro" class="section level2">
+<h2>Intro</h2>
+<p>This is possibly the single most important chapter of <span
+class="citation">Berger (1985)</span> because it outlines all of the key
+concepts and definitions that link Bayesian data analysis with decision
+theory. These notes are primarily a glossary of key terms and ideas.</p>
 </div>
-<div id="determination-of-the-prior-density" class="section level2">
-<h2>Determination of the prior density</h2>
-<p>Berger outlines four methods for determining the prior. The first two
-involve sketching the distribution (either by drawing a histogram of the
-distribution of <span class="math inline">\(\theta\)</span> or by
-sketching the relative likelihood of various parameter values). The
-third method is the common ‘matching a given functional form’, which
-boils down to finding the values of hyperparameters (e.g., if <span
-class="math inline">\(p(\theta | \mu, \sigma) = Normal(\mu,
-\sigma)\)</span>, then choose <span class="math inline">\(\mu\)</span>
-and <span class="math inline">\(\sigma\)</span> appropriately). One
-possibility is choosing values after computing moments of the
-distribution, but Berger discourages this approach since the tails of an
-unbounded parameter space can have a large effect on its moments.
-Instead, he encourages choosing values for the hyperparameters based on
-quantiles (e.g., what is <span class="math inline">\(Pr(\theta &lt;
-0)\)</span>?). This is similar to the final approach, which is to sketch
-the CDF of <span class="math inline">\(\theta.\)</span></p>
+<div id="definitions" class="section level2">
+<h2>Definitions</h2>
+<p><strong>Definition 1:</strong> If <span
+class="math inline">\(\pi*\star(\theta)\)</span> is the believed
+probability distribution of <span class="math inline">\(\theta\)</span>
+at the time of decision making (i.e., the posterior distribution if we
+have already observed data), the <em>Bayesian expected loss</em> of an
+action <span class="math inline">\(a\)</span> is <span
+class="math display">\[\rho(\pi^\star, a) = E^{\pi^\star}L(\theta, a) =
+\int_\Theta L(\theta, a)\pi^\star(\theta)d\theta\]</span>.</p>
+<hr>
+<p><strong>Definition 2:</strong> A (nonrandomized) <em>decision
+rule</em> <span class="math inline">\(\delta(x)\)</span> is a function
+from <span class="math inline">\(\mathscr{X}\)</span> into <span
+class="math inline">\(\mathscr{A}\)</span>. If <span
+class="math inline">\(X=x\)</span> is the observed value of the sample
+information the <span class="math inline">\(\delta(x)\)</span> is the
+action that will be taken. Two decision rules, <span
+class="math inline">\(\delta_1\)</span> and <span
+class="math inline">\(\delta_2\)</span> are considered equivalent if
+<span class="math inline">\(P_\theta(\delta_1(X) = \delta_2(X)) =
+1\)</span> for all <span class="math inline">\(\theta.\)</span></p>
+<hr>
+<p><strong>Definition 3:</strong> The <em>risk function</em> of a
+decision rule <span class="math inline">\(\delta(x)\)</span> is defined
+by <span class="math display">\[R(\theta, \delta) = E_\theta^X[L(\theta,
+\delta(X))] = \int_\mathscr{X} L(\theta,
+\delta(X))f(x|\theta)dx.\]</span></p>
+<p>Note that the risk is a <em>function</em> on the parameter space
+<span class="math inline">\(\Theta\)</span>, so ideally we would choose
+a decision rule that minimizes the risk for all values of the parameter
+<span class="math inline">\(\theta.\)</span> Such a rule is called
+<em>admissible</em>, because there exists no R-better decision rule.</p>
+<hr>
+<p><strong>Definition 4:</strong> A decision rule <span
+class="math inline">\(\delta_1\)</span> is <em>R-better</em> than a
+decision rule <span class="math inline">\(\delta_2\)</span> if <span
+class="math inline">\(R(\theta, \delta_1) \leq R(\theta, \delta_2)
+\forall \theta \in \Theta,\)</span> with strict inequality for some
+<span class="math inline">\(\theta.\)</span> For strict equality on all
+values of <span class="math inline">\(\theta\)</span>, the two rules are
+considered to be <em>R-equivalent</em>.</p>
+<hr>
+<p><strong>Definition 5:</strong> A decision rule <span
+class="math inline">\(\delta\)</span> is <em>addmisible</em> if there
+exists no R-better decision rule.</p>
+<hr>
+<p><strong>Definition 6:</strong> The <em>Bayes risk</em> of a decision
+rule <span class="math inline">\(\delta\)</span> with respect to a prior
+distribution <span class="math inline">\(\pi\)</span> on <span
+class="math inline">\(\Theta\)</span> is defined as <span
+class="math display">\[r(\pi, \delta) = E^\pi[R(\theta,
+\delta)].\]</span></p>
+<p>Despite requiring the prior <span
+class="math inline">\(\pi(\theta)\)</span>, <span
+class="citation">Berger (1985)</span> considers the Bayes risk of a
+decision rule to be a frequentist measure since it involves the risk
+function (which averages over all possible samples, not simply the
+observed data values contained in the sample at hand). I find this
+confusing, because it requires a prior to be specified.</p>
+<hr>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-berger85" class="csl-entry">
+Berger, James O. 1985. <em>Statistical Decision Theory and Bayesian
+Analysis</em>. 2nd ed. Springer Series in Statistics. New York:
+Springer-Verlag.
 </div>
-<div id="noninformative-priors" class="section level2">
-<h2>Noninformative Priors</h2>
-<p>This section is concerned with choosing noninformative priors and
-includes a discussion of the problem of noninformative priors that are
-not invariant under transformation. This includes a discussion of the
-Jeffrey’s prior.</p>
 </div>
-<div id="methods-of-selecting-a-prior" class="section level2">
-<h2>Methods of selecting a prior</h2>
-<p>One interesting method for selection is what Berger calls the
-<em>ML-II</em> method of prior selection. First, define <span
-class="math inline">\(\Gamma\)</span> to be the class of potential
-priors. The <em>ML-II</em> approach to prior selection is similar to a
-prior predictive check: choose the prior <span
-class="math inline">\(\hat{\pi}\)</span> such that the resulting
-marginal distribution of the data, is as plausible as it can be.
-Formally, we seek <span class="math inline">\(\hat{\pi}\)</span> such
-that</p>
-<p><span class="math display">\[m(x|\hat{\pi}) = \sup_{\pi \in \Gamma}
-m(x|\pi),\]</span></p>
-<p>where <span class="math inline">\(m(x|\pi)\)</span> is the marginal
-distribution of x under the prior <span
-class="math inline">\(\pi.\)</span> Essentially the idea is that if we
-treat the probability density of the data x as being definitely known
-(e.g., we have strong enough suspicion that we feel comfortable claiming
-that we “know” that the data are normally distributed, say), the only
-way to produce a marginal distribution for the data that matches our
-observed sample more closely (i.e., is more likely) is to change the
-prior. The difference is that this definition seeks the prior that
-maximizes the value of <span class="math inline">\(m\)</span>.</p>
-</div>
-<div id="hierarchical-priors" class="section level2">
-<h2>Hierarchical priors</h2>
-<p>If we have structural (e.g., that the parameters <span
-class="math inline">\(\theta_i\)</span> should be independent and
-identically distributed, or if we know the functional form of the prior)
-and subjective knowledge to inform priors then, two stages can be
-applied to form “hierarchical priors”. The first is to choose the class
-of priors <span class="math display">\[\Gamma = \{\pi_0(\theta|\lambda):
-\pi_0 \text{ is of a certain structure and } \lambda \in \Lambda
-\},\]</span> and then the second stage would be to put a prior on <span
-class="math inline">\(\lambda.\)</span></p>
 </div>
 
 

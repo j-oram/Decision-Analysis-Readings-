@@ -1,0 +1,48 @@
+---
+title: '@berger85 Chapter 1: Key Definitions and Concepts'
+author: "Jacob Oram"
+date: "`r Sys.Date()`"
+output: html_document
+bibliography:
+  BDA.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+This is possibly the single most important chapter of @berger85 because it outlines all of the key concepts and definitions that link Bayesian data analysis with decision theory. These notes are primarily a glossary of key terms and ideas. 
+
+## Definitions 
+
+__Definition 1:__ If $\pi*\star(\theta)$ is the believed probability distribution of $\theta$ at the time of decision making (i.e., the posterior distribution if we have already observed data), the *Bayesian expected loss* of an action $a$ is 
+$$\rho(\pi^\star, a) = E^{\pi^\star}L(\theta, a) = \int_\Theta L(\theta, a)\pi^\star(\theta)d\theta$$. 
+
+<hr>
+
+__Definition 2:__ A (nonrandomized) *decision rule* $\delta(x)$ is a function from $\mathscr{X}$ into $\mathscr{A}$. If $X=x$ is the observed value of the sample information the $\delta(x)$ is the action that will be taken. Two decision rules, $\delta_1$ and $\delta_2$ are considered equivalent if $P_\theta(\delta_1(X) = \delta_2(X)) = 1$ for all $\theta.$ 
+
+<hr>
+
+__Definition 3:__ The *risk function* of a decision rule $\delta(x)$ is defined by 
+$$R(\theta, \delta) = E_\theta^X[L(\theta, \delta(X))] = \int_\mathscr{X} L(\theta, \delta(X))f(x|\theta)dx.$$
+
+Note that the risk is a *function* on the parameter space $\Theta$, so ideally we would choose a decision rule that minimizes the risk for all values of the parameter $\theta.$ Such a rule is called *admissible*, because there exists no R-better decision rule. 
+
+<hr> 
+
+__Definition 4:__ A decision rule $\delta_1$ is *R-better* than a decision rule $\delta_2$ if $R(\theta, \delta_1) \leq R(\theta, \delta_2) \forall \theta \in \Theta,$ with strict inequality for some $\theta.$ For strict equality on all values of $\theta$, the two rules are considered to be *R-equivalent*. 
+
+<hr> 
+
+__Definition 5:__ A decision rule $\delta$ is *addmisible* if there exists no R-better decision rule. 
+
+<hr> 
+
+__Definition 6:__ The *Bayes risk* of a decision rule $\delta$ with respect to a prior distribution $\pi$ on $\Theta$ is defined as $$r(\pi, \delta) = E^\pi[R(\theta, \delta)].$$ 
+
+Despite requiring the prior $\pi(\theta)$, @berger85 considers the Bayes risk of a decision rule to be a frequentist measure since it involves the risk function (which averages over all possible samples, not simply the observed data values contained in the sample at hand). I find this confusing, because it requires a prior to be specified.
+
+<hr> 

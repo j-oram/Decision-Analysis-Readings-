@@ -11,13 +11,14 @@
 
 <meta name="author" content="Jacob Oram" />
 
-<meta name="date" content="2022-12-14" />
+<meta name="date" content="2022-12-15" />
 
 <title>Other readings</title>
 
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -276,6 +277,18 @@ $(document).ready(function () {
   <a href="index.html">Intro</a>
 </li>
 <li>
+  <a href="Berger-Ch1.html">Berger Ch.1</a>
+</li>
+<li>
+  <a href="Berger-Ch2.html">Berger Ch.2</a>
+</li>
+<li>
+  <a href="Berger-Ch3.html">Berger Ch.3</a>
+</li>
+<li>
+  <a href="Berger-Ch4.html">Berger Ch.4</a>
+</li>
+<li>
   <a href="Other.html">Other</a>
 </li>
       </ul>
@@ -292,119 +305,260 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Other readings</h1>
 <h4 class="author">Jacob Oram</h4>
-<h4 class="date">2022-12-14</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
 
-<p>This chapter covers other readings, including papers that have applied decision analysis in ecology and conservation biology and the ninth chapter of <em>Bayesian Data Analysis</em> <span class="citation">(Gelman 2013)</span>.</p>
-<div id="wade00-bayesian-methods-in-conservation-biology" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> <span class="citation">(Wade 2000)</span> Bayesian Methods in Conservation Biology</h1>
-<p>The main thrust of this article is that practitioners in conservation biology may find Bayesian methods far more appropriate for biological data, easier to handle and interpret when presenting results, with prior information explicitly incorporated to improve scientific transparency.
-The author first provides a simple regression example to demonstrate a situation in which Bayesian methods yield far more reasonable results (in the sense that it “matches what most people would conclude without using statistics”).
-The regression example is then included in a formal decision analysis, developing the loss functions directly (as opposed to defining a utility function and then defining <span class="math inline">\(L = -U(\theta, a)\)</span>, which is the approach that Berger advocates for).
-Although this is a very simple example, it provides an excellent high-level overview of Bayesian analysis and decision theory, with a clear argument that these methods will ultimately be easier to understand and communicate when conducting conservation-oriented studies in biology and ecology.</p>
+<p>This chapter covers other readings, including papers that have
+applied decision analysis in ecology and conservation biology and the
+ninth chapter of <em>Bayesian Data Analysis</em> <span
+class="citation">(Gelman 2013)</span>.</p>
+<div id="wade00-bayesian-methods-in-conservation-biology"
+class="section level2">
+<h2><span class="citation">(Wade 2000)</span> Bayesian Methods in
+Conservation Biology</h2>
+<p>The main thrust of this article is that practitioners in conservation
+biology may find Bayesian methods far more appropriate for biological
+data, easier to handle and interpret when presenting results, with prior
+information explicitly incorporated to improve scientific transparency.
+The author first provides a simple regression example to demonstrate a
+situation in which Bayesian methods yield far more reasonable results
+(in the sense that it “matches what most people would conclude without
+using statistics”). The regression example is then included in a formal
+decision analysis, developing the loss functions directly (as opposed to
+defining a utility function and then defining <span
+class="math inline">\(L = -U(\theta, a)\)</span>, which is the approach
+that Berger advocates for). Although this is a very simple example, it
+provides an excellent high-level overview of Bayesian analysis and
+decision theory, with a clear argument that these methods will
+ultimately be easier to understand and communicate when conducting
+conservation-oriented studies in biology and ecology.</p>
 </div>
-<div id="williams16-combining-statistical-inference-and-decisions-in-ecology" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> <span class="citation">(Williams and Hooten 2016)</span> Combining statistical inference and decisions in ecology</h1>
-<p>The authors introduce statistical decision theory (SDT) for ecologists, noting that it has been widely applied in operations research as well as in statistics and mathematics. [In statistics, a decision rule could be a choice of estimator, such as the posterior mean; <span class="citation">Berger (1985)</span>].
-Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology – essentially, this is briefly restating the first four chapters of <span class="citation">Berger (1985)</span>.
-Following this overview, the <span class="citation">Williams and Hooten (2016)</span> address two classes of problems: choosing an estimator to be reported (“optimal point estimation”) and choosing a management strategy for a natural resource (“optimal resource management”).
-For the problem of optimal point estimation, the authors note that the correctly specifying the loss function is critical for appropriate inference.</p>
-<p>The authors illustrate optimal resource management through an example wherein land managers must decide the burn interval to optimize cumulative abundance of Henslow’s Sparrows at Big Oaks National Wildlife Refuge in southeastern Indiana.<br />
-This example provides a beautiful example of constructing a loss function from first principles (e.g., the statement that more frequent burn intervals are more costly and should have higher loss).
-The model used in the case study is</p>
+<div
+id="williams16-combining-statistical-inference-and-decisions-in-ecology"
+class="section level2">
+<h2><span class="citation">(Williams and Hooten 2016)</span> Combining
+statistical inference and decisions in ecology</h2>
+<p>The authors introduce statistical decision theory (SDT) for
+ecologists, noting that it has been widely applied in operations
+research as well as in statistics and mathematics. [In statistics, a
+decision rule could be a choice of estimator, such as the posterior
+mean; <span class="citation">Berger (1985)</span>]. Noting that
+statistics originated as a sub-branch of decision theory, and that the
+reemergence of the Bayesian paradigm is partly due to its natural
+compatability with decision theory, the authors summarize the highlights
+of statistical decision theory that are revelant for the field of
+ecology – essentially, this is briefly restating the first four chapters
+of <span class="citation">Berger (1985)</span>. Following this overview,
+the <span class="citation">Williams and Hooten (2016)</span> address two
+classes of problems: choosing an estimator to be reported (“optimal
+point estimation”) and choosing a management strategy for a natural
+resource (“optimal resource management”). For the problem of optimal
+point estimation, the authors note that the correctly specifying the
+loss function is critical for appropriate inference.</p>
+<p>The authors illustrate optimal resource management through an example
+wherein land managers must decide the burn interval to optimize
+cumulative abundance of Henslow’s Sparrows at Big Oaks National Wildlife
+Refuge in southeastern Indiana.<br />
+This example provides a beautiful example of constructing a loss
+function from first principles (e.g., the statement that more frequent
+burn intervals are more costly and should have higher loss). The model
+used in the case study is</p>
 <p><span class="math display">\[
 y_{j,t} \sim Poisson(A_j\lambda_{j,t}) \\
 log(\lambda_{j,t}) = x_{j,t}\boldsymbol{\beta} + \eta_j \\
 \]</span></p>
-<p>where <span class="math inline">\(y_{j,t}\)</span> is the count of sparrows at site <span class="math inline">\(j\)</span> during time <span class="math inline">\(t\)</span>, <span class="math inline">\(A_j\)</span> is the area of site <span class="math inline">\(j = 1, 2, \dots, 8\)</span>, <span class="math inline">\(\lambda_{j,t}\)</span> is the unknown density of Henslows sparrows at site <span class="math inline">\(j\)</span> during time <span class="math inline">\(t\)</span>, and is a function of regression coefficients <span class="math inline">\(\boldsymbol{\theta} = (\boldsymbol{\beta \eta})^T\)</span>. The covariate <span class="math inline">\(x\)</span> represents the number of summers since the last burn. The random effect <span class="math inline">\(\eta_j\)</span> is a random effect that adjusts the density of Henslows sparrows at each site. The priors for this model were</p>
+<p>where <span class="math inline">\(y_{j,t}\)</span> is the count of
+sparrows at site <span class="math inline">\(j\)</span> during time
+<span class="math inline">\(t\)</span>, <span
+class="math inline">\(A_j\)</span> is the area of site <span
+class="math inline">\(j = 1, 2, \dots, 8\)</span>, <span
+class="math inline">\(\lambda_{j,t}\)</span> is the unknown density of
+Henslows sparrows at site <span class="math inline">\(j\)</span> during
+time <span class="math inline">\(t\)</span>, and is a function of
+regression coefficients <span class="math inline">\(\boldsymbol{\theta}
+= (\boldsymbol{\beta \eta})^T\)</span>. The covariate <span
+class="math inline">\(x\)</span> represents the number of summers since
+the last burn. The random effect <span
+class="math inline">\(\eta_j\)</span> is a random effect that adjusts
+the density of Henslows sparrows at each site. The priors for this model
+were</p>
 <p><span class="math display">\[
 \boldsymbol{\beta} \sim Normal(\boldsymbol{\mu}, \sigma^2I) \\
 \eta_j \sim Normal(0,1)
 \]</span></p>
-<p>with <span class="math inline">\(\mu^T = (-5, 2.5,0.2, 0.2)\)</span> and <span class="math inline">\(\sigma^2 = 10\)</span> being informed by a prior study.
-The abundance over which posterior uncertainty is estimated is a derived quantity resulting from <span class="math inline">\(\boldsymbol{\theta}\)</span>.</p>
-<p>The authors’ case study utilized a standard loss function (linear loss), which is in keeping with their advice to practitioners.
-They acknowledge that choosing a loss function is just as subjective as choosing a likelihood and a prior, but the body of literature is many times larger for the latter two.
-In cases where information about potential loss is lacking, the authors suggest that standard loss functions are a good starting point.
-They argue that the most important aspects to consider when constructing a loss function are the shape (e.g., convex or concave) and the symmetry.</p>
+<p>with <span class="math inline">\(\mu^T = (-5, 2.5,0.2, 0.2)\)</span>
+and <span class="math inline">\(\sigma^2 = 10\)</span> being informed by
+a prior study. The abundance over which posterior uncertainty is
+estimated is a derived quantity resulting from <span
+class="math inline">\(\boldsymbol{\theta}\)</span>.</p>
+<p>The authors’ case study utilized a standard loss function (linear
+loss), which is in keeping with their advice to practitioners. They
+acknowledge that choosing a loss function is just as subjective as
+choosing a likelihood and a prior, but the body of literature is many
+times larger for the latter two. In cases where information about
+potential loss is lacking, the authors suggest that standard loss
+functions are a good starting point. They argue that the most important
+aspects to consider when constructing a loss function are the shape
+(e.g., convex or concave) and the symmetry.</p>
 </div>
-<div id="dorazio03-bayesian-inference-and-decision-theory-a-framework-for-decision-making-in-natural-resource-management" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> <span class="citation">(Dorazio and Johnson 2003)</span> Bayesian inference and decision theory: A framework for decision making in natural resource management</h1>
-<p>The authors describe the link between Bayesian methods, decision analysis and natural resource management.
-The introduction, which does not include the in-depth description of Bayesian decision theoretical machinery <span class="citation">(as in Williams and Hooten 2016)</span>, makes the argument essentially for the adaptation of Bayesian methods (in general; this article is old).
-However, the main thrust of the article appears very similar to <span class="citation">Williams and Hooten (2016)</span>; a key difference is that the authors provide an extended example wherein the model is autoregressive and parameter estimates are repeatedly updated over time.<br />
-The authors discuss not only finding the expected loss for a single future time (based on the posterior predictive distribution), but also finding a sequence of optimal actions for future time steps.</p>
+<div
+id="dorazio03-bayesian-inference-and-decision-theory-a-framework-for-decision-making-in-natural-resource-management"
+class="section level2">
+<h2><span class="citation">(Dorazio and Johnson 2003)</span> Bayesian
+inference and decision theory: A framework for decision making in
+natural resource management</h2>
+<p>The authors describe the link between Bayesian methods, decision
+analysis and natural resource management. The introduction, which does
+not include the in-depth description of Bayesian decision theoretical
+machinery <span class="citation">(as in Williams and Hooten
+2016)</span>, makes the argument essentially for the adaptation of
+Bayesian methods (in general; this article is old). However, the main
+thrust of the article appears very similar to <span
+class="citation">Williams and Hooten (2016)</span>; a key difference is
+that the authors provide an extended example wherein the model is
+autoregressive and parameter estimates are repeatedly updated over
+time.<br />
+The authors discuss not only finding the expected loss for a single
+future time (based on the posterior predictive distribution), but also
+finding a sequence of optimal actions for future time steps.</p>
 <p>Notes:</p>
 <ul>
-<li>This paper directly addresses decision making for adaptive monitoring in the sense that it focuses on an example where the same decision is repeatedly made at regular intervals.
-Through the sequential updating of parameter estimates over time, managers learn over time what determines optimal actions.<br />
+<li>This paper directly addresses decision making for adaptive
+monitoring in the sense that it focuses on an example where the same
+decision is repeatedly made at regular intervals. Through the sequential
+updating of parameter estimates over time, managers learn over time what
+determines optimal actions.<br />
 </li>
-<li>The authors assume that the optimal habitat state for the hypothetical migratory birds in their example is known with certainty.</li>
-<li>The authors do not consider cost of management actions in their loss function.</li>
+<li>The authors assume that the optimal habitat state for the
+hypothetical migratory birds in their example is known with
+certainty.</li>
+<li>The authors do not consider cost of management actions in their loss
+function.</li>
 </ul>
 </div>
-<div id="varis99-learning-bayesian-decision-analysis-by-doing-lessons-from-environmental-and-natural-resources-management" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> <span class="citation">(Varis and Kuikka 1999)</span> Learning Bayesian decision analysis by doing: lessons from environmental and natural resources management</h1>
-<p>The authors highlight several case studies to summarize their learning from applying Bayesian decision analysis.
-The decision analytic frameworks they use in these case studies are based on influence diagrams and belief networks, as summarized in <span class="citation">Varis (1997)</span> (this work was originally developed by Judea Pearl and others in the late 1980’s).
-Among the lessons learned (there are many, see the discussion section), some key highlights are:</p>
+<div
+id="varis99-learning-bayesian-decision-analysis-by-doing-lessons-from-environmental-and-natural-resources-management"
+class="section level2">
+<h2><span class="citation">(Varis and Kuikka 1999)</span> Learning
+Bayesian decision analysis by doing: lessons from environmental and
+natural resources management</h2>
+<p>The authors highlight several case studies to summarize their
+learning from applying Bayesian decision analysis. The decision analytic
+frameworks they use in these case studies are based on influence
+diagrams and belief networks, as summarized in <span
+class="citation">Varis (1997)</span> (this work was originally developed
+by Judea Pearl and others in the late 1980’s). Among the lessons learned
+(there are many, see the discussion section), some key highlights
+are:</p>
 <ul>
 <li>each modification of the model structure redefines the problem</li>
 <li>structural uncertainty of a deterministic model can be modeled</li>
 <li>Bayesian decision analysis is not just parameter estimation</li>
 </ul>
-<p>Some of these highlights are fairly apparent or apply outside of the BDA context.
-The last point seems obvious but it is interesting because it is related to a comment in a previous paper <span class="citation">(Varis 1997)</span>: when the authors equate Bayesian decision analysis with network based methods “the entire model - <em>the hypothesis space</em> - is subjected to Bayesian analysis, not only the parameter space”.
-This statement makes sense when we consider that according to <span class="citation">Berger (1985)</span>, in a hypothesis test setting the reject/FTR binary is itself a set of actions that are evaluated based on expected posterior loss.
-However, in the formulation of <span class="citation">Berger (1985)</span>, the entire model is not subjected to Bayesian analysis – we still assume a likelihood function, so there is some structural input from the statistician about how the data arise.
-This appears to be a discrepancy between how BDA is described by <span class="citation">Varis and Kuikka (1999)</span> and <span class="citation">Berger (1985)</span>.</p>
-<p>Another source of discrepancy (or perhaps a lack of understanding on my part) arises from trying to connect networks to posterior loss.
-While the components of the network models match the types of situations described by <span class="citation">Berger (1985)</span> (e.g., an objective function, a decision to be made, an unknown state of nature with a probability distribution assigned to possible values), I haven’t formally made the connection yet with this formulation of a decision problem with minimizing posterior loss.
-One point of confusion for me is the arc from the random “prior” node to the final satisfaction node (see Figure <a href="#fig:netex">4.1</a>).
-I read this arc as a statement: “if the state of nature truly is <span class="math inline">\(\theta^\star\)</span>, then my satisfaction (i.e., expected loss, utility), after gathering data from screening and making a decision will be <span class="math inline">\(X\)</span>.”
-However, in the formulation of <span class="citation">Berger (1985)</span>, loss associated with an action is influenced by the true value of <span class="math inline">\(\theta\)</span> only through the posterior distribution, which would correspond with the three right hand arcs (from Environmental impacts to screening to EIA to satisfiction) in Figure <a href="#fig:netex">4.1</a>.</p>
+<p>Some of these highlights are fairly apparent or apply outside of the
+BDA context. The last point seems obvious but it is interesting because
+it is related to a comment in a previous paper <span
+class="citation">(Varis 1997)</span>: when the authors equate Bayesian
+decision analysis with network based methods “the entire model - <em>the
+hypothesis space</em> - is subjected to Bayesian analysis, not only the
+parameter space”. This statement makes sense when we consider that
+according to <span class="citation">Berger (1985)</span>, in a
+hypothesis test setting the reject/FTR binary is itself a set of actions
+that are evaluated based on expected posterior loss. However, in the
+formulation of <span class="citation">Berger (1985)</span>, the entire
+model is not subjected to Bayesian analysis – we still assume a
+likelihood function, so there is some structural input from the
+statistician about how the data arise. This appears to be a discrepancy
+between how BDA is described by <span class="citation">Varis and Kuikka
+(1999)</span> and <span class="citation">Berger (1985)</span>.</p>
+<p>Another source of discrepancy (or perhaps a lack of understanding on
+my part) arises from trying to connect networks to posterior loss. While
+the components of the network models match the types of situations
+described by <span class="citation">Berger (1985)</span> (e.g., an
+objective function, a decision to be made, an unknown state of nature
+with a probability distribution assigned to possible values), I haven’t
+formally made the connection yet with this formulation of a decision
+problem with minimizing posterior loss. One point of confusion for me is
+the arc from the random “prior” node to the final satisfaction node (see
+Figure @ref(fig:netex)). I read this arc as a statement: “if the state
+of nature truly is <span class="math inline">\(\theta^\star\)</span>,
+then my satisfaction (i.e., expected loss, utility), after gathering
+data from screening and making a decision will be <span
+class="math inline">\(X\)</span>.” However, in the formulation of <span
+class="citation">Berger (1985)</span>, loss associated with an action is
+influenced by the true value of <span
+class="math inline">\(\theta\)</span> only through the posterior
+distribution, which would correspond with the three right hand arcs
+(from Environmental impacts to screening to EIA to satisfiction) in
+Figure @ref(fig:netex).</p>
 <hr>
-<div class="figure"><span style="display:block;" id="fig:netex"></span>
+<div class="figure">
 <img src="netex/Slide1.png" alt="An annotated reproduction of Figure 1a from @varis97" width="110%" />
 <p class="caption">
-Figure 4.1: An annotated reproduction of Figure 1a from <span class="citation">Varis (1997)</span>
+An annotated reproduction of Figure 1a from <span class="citation">Varis
+(1997)</span>
 </p>
 </div>
 <hr>
-<div id="highlights-and-select-chapters-from-smith10" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Highlights and select chapters from <span class="citation">Smith (2010)</span></h2>
-<p>The book from <span class="citation">Smith (2010)</span> about Bayesian decision analysis is as applied as it gets.</p>
+</div>
+<div id="highlights-and-select-chapters-from-smith10"
+class="section level2">
+<h2>Highlights and select chapters from <span class="citation">Smith
+(2010)</span></h2>
+<p>The book from <span class="citation">Smith (2010)</span> about
+Bayesian decision analysis is as applied as it gets.</p>
 <hr>
 </div>
 <div id="references" class="section level2 unnumbered">
-<h2>References</h2>
+<h2 class="unnumbered">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-berger85" class="csl-entry">
-Berger, James O. 1985. <em>Statistical Decision Theory and Bayesian Analysis</em>. 2nd ed. Springer Series in Statistics. New York: Springer-Verlag.
+Berger, James O. 1985. <em>Statistical Decision Theory and Bayesian
+Analysis</em>. 2nd ed. Springer Series in Statistics. New York:
+Springer-Verlag.
 </div>
 <div id="ref-dorazio03" class="csl-entry">
-Dorazio, Robert M., and Fred A. Johnson. 2003. <span>“BAYESIAN INFERENCE AND DECISION THEORY—a FRAMEWORK FOR DECISION MAKING IN NATURAL RESOURCE MANAGEMENT.”</span> <em>Ecological Applications</em> 13 (2): 556–63. https://doi.org/<a href="https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2">https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2</a>.
+Dorazio, Robert M., and Fred A. Johnson. 2003. <span>“BAYESIAN INFERENCE
+AND DECISION THEORY—a FRAMEWORK FOR DECISION MAKING IN NATURAL RESOURCE
+MANAGEMENT.”</span> <em>Ecological Applications</em> 13 (2): 556–63.
+https://doi.org/<a
+href="https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2">https://doi.org/10.1890/1051-0761(2003)013[0556:BIADTA]2.0.CO;2</a>.
 </div>
 <div id="ref-gelman13" class="csl-entry">
-Gelman, Andrew. 2013. <em>Bayesian Data Analysis</em>. 3rd ed. Chapman &amp; Hall/CRC Texts in Statistical Science. Boca Raton, FL: Chapman; Hall/CRC, an imprint of Taylor; Francis.
+Gelman, Andrew. 2013. <em>Bayesian Data Analysis</em>. 3rd ed. Chapman
+&amp; Hall/CRC Texts in Statistical Science. Boca Raton, FL: Chapman;
+Hall/CRC, an imprint of Taylor; Francis.
 </div>
 <div id="ref-smith10" class="csl-entry">
-Smith, J. Q. 2010. <em>Bayesian Decision Analysis : Principles and Practice</em>. Cambridge: Cambridge University Press.
+Smith, J. Q. 2010. <em>Bayesian Decision Analysis : Principles and
+Practice</em>. Cambridge: Cambridge University Press.
 </div>
 <div id="ref-varis97" class="csl-entry">
-Varis, Olli. 1997. <span>“Bayesian Decision Analysis for Environmental and Resource Management.”</span> <em>Environmental Modelling &amp; Software</em> 12 (2): 177–85. https://doi.org/<a href="https://doi.org/10.1016/S1364-8152(97)00008-X">https://doi.org/10.1016/S1364-8152(97)00008-X</a>.
+Varis, Olli. 1997. <span>“Bayesian Decision Analysis for Environmental
+and Resource Management.”</span> <em>Environmental Modelling &amp;
+Software</em> 12 (2): 177–85. https://doi.org/<a
+href="https://doi.org/10.1016/S1364-8152(97)00008-X">https://doi.org/10.1016/S1364-8152(97)00008-X</a>.
 </div>
 <div id="ref-varis99" class="csl-entry">
-Varis, Olli, and Sakari Kuikka. 1999. <span>“Learning Bayesian Decision Analysis by Doing: Lessons from Environmental and Natural Resources Management.”</span> <em>Ecological Modelling</em> 119 (2): 177–95. https://doi.org/<a href="https://doi.org/10.1016/S0304-3800(99)00061-7">https://doi.org/10.1016/S0304-3800(99)00061-7</a>.
+Varis, Olli, and Sakari Kuikka. 1999. <span>“Learning Bayesian Decision
+Analysis by Doing: Lessons from Environmental and Natural Resources
+Management.”</span> <em>Ecological Modelling</em> 119 (2): 177–95.
+https://doi.org/<a
+href="https://doi.org/10.1016/S0304-3800(99)00061-7">https://doi.org/10.1016/S0304-3800(99)00061-7</a>.
 </div>
 <div id="ref-wade00" class="csl-entry">
-Wade, Paul R. 2000. <span>“Bayesian Methods in Conservation Biology.”</span> <em>Conservation Biology</em> 14 (5): 1308–16. https://doi.org/<a href="https://doi.org/10.1046/j.1523-1739.2000.99415.x">https://doi.org/10.1046/j.1523-1739.2000.99415.x</a>.
+Wade, Paul R. 2000. <span>“Bayesian Methods in Conservation
+Biology.”</span> <em>Conservation Biology</em> 14 (5): 1308–16.
+https://doi.org/<a
+href="https://doi.org/10.1046/j.1523-1739.2000.99415.x">https://doi.org/10.1046/j.1523-1739.2000.99415.x</a>.
 </div>
 <div id="ref-williams16" class="csl-entry">
-Williams, Perry J., and Mevin B. Hooten. 2016. <span>“Combining Statistical Inference and Decisions in Ecology.”</span> <em>Ecological Applications</em> 26 (6): 1930–42. https://doi.org/<a href="https://doi.org/10.1890/15-1593.1">https://doi.org/10.1890/15-1593.1</a>.
-</div>
+Williams, Perry J., and Mevin B. Hooten. 2016. <span>“Combining
+Statistical Inference and Decisions in Ecology.”</span> <em>Ecological
+Applications</em> 26 (6): 1930–42. https://doi.org/<a
+href="https://doi.org/10.1890/15-1593.1">https://doi.org/10.1890/15-1593.1</a>.
 </div>
 </div>
 </div>

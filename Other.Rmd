@@ -4,7 +4,7 @@ author: "Jacob Oram"
 date: "`r Sys.Date()`"
 output: 
   bookdown::html_document2:
-    toc: false 
+    toc: false
 bibliography: BDA.bib
 ---
 
@@ -14,14 +14,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This chapter covers other readings, including papers that have applied decision analysis in ecology and conservation biology and the ninth chapter of *Bayesian Data Analysis* [@gelman13]. 
 
-# [@wade00] Bayesian Methods in Conservation Biology 
+## [@wade00] Bayesian Methods in Conservation Biology 
 
 The main thrust of this article is that practitioners in conservation biology may find Bayesian methods far more appropriate for biological data, easier to handle and interpret when presenting results, with prior information explicitly incorporated to improve scientific transparency. 
 The author first provides a simple regression example to demonstrate a situation in which Bayesian methods yield far more reasonable results (in the sense that it "matches what most people would conclude without using statistics"). 
 The regression example is then included in a formal decision analysis, developing the loss functions directly (as opposed to defining a utility function and then defining $L = -U(\theta, a)$, which is the approach that Berger advocates for). 
 Although this is a very simple example, it provides an excellent high-level overview of Bayesian analysis and decision theory, with a clear argument that these methods will ultimately be easier to understand and communicate when conducting conservation-oriented studies in biology and ecology. 
 
-# [@williams16] Combining statistical inference and decisions in ecology 
+## [@williams16] Combining statistical inference and decisions in ecology 
 
 The authors introduce statistical decision theory (SDT) for ecologists, noting that it has been widely applied in operations research as well as in statistics and mathematics. [In statistics, a decision rule could be a choice of estimator, such as the posterior mean; @berger85]. 
 Noting that statistics originated as a sub-branch of decision theory, and that the reemergence of the Bayesian paradigm is partly due to its natural compatability with decision theory, the authors summarize the highlights of statistical decision theory that are revelant for the field of ecology -- essentially, this is briefly restating the first four chapters of @berger85. 
@@ -52,7 +52,7 @@ They acknowledge that choosing a loss function is just as subjective as choosing
 In cases where information about potential loss is lacking, the authors suggest that standard loss functions are a good starting point. 
 They argue that the most important aspects to consider when constructing a loss function are the shape (e.g., convex or concave) and the symmetry. 
 
-# [@dorazio03] Bayesian inference and decision theory: A framework for decision making in natural resource management
+## [@dorazio03] Bayesian inference and decision theory: A framework for decision making in natural resource management
 
 The authors describe the link between Bayesian methods, decision analysis and natural resource management. 
 The introduction, which does not include the in-depth description of Bayesian decision theoretical machinery [as in @williams16], makes the argument essentially for the adaptation of Bayesian methods (in general; this article is old). 
@@ -67,7 +67,7 @@ Through the sequential updating of parameter estimates over time, managers learn
 * The authors do not consider cost of management actions in their loss function. 
 
 
-# [@varis99] Learning Bayesian decision analysis by doing: lessons from environmental and natural resources management 
+## [@varis99] Learning Bayesian decision analysis by doing: lessons from environmental and natural resources management 
 
 The authors highlight several case studies to summarize their learning from applying Bayesian decision analysis. 
 The decision analytic frameworks they use in these case studies are based on influence diagrams and belief networks, as summarized in @varis97 (this work was originally developed by Judea Pearl and others in the late 1980's). 
