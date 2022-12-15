@@ -5,6 +5,12 @@ navbar:
   left:
   - text: "Intro"
     href: index.html
+  - text: "Berger Ch.2"
+    href: Berger-Ch2.html
+  - text: "Berger Ch.3"
+    href: Berger-Ch3.html
+  - text: "Berger Ch.4"
+    href: Berger-Ch4.html
   - text: "Other"
     href: Other.html
 output: 
