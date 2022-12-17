@@ -45,4 +45,17 @@ __Definition 6:__ The *Bayes risk* of a decision rule $\delta$ with respect to a
 
 Despite requiring the prior $\pi(\theta)$, @berger85 considers the Bayes risk of a decision rule to be a frequentist measure since it involves the risk function (which averages over all possible samples, not simply the observed data values contained in the sample at hand). I find this confusing, because it requires a prior to be specified.
 
+A decision rule that minimizes $r(\pi, \delta)$ is called a *Bayes rule*, and the realized value $r(\pi, \delta)$ is called the *Bayes risk*.  
+
+<hr>
+__Definition 7:__ A *randomized decision rule* $\delta^\star(x,\cdot)$ is, for each $x$, a probability distribution on $\mathscr{A}$ so that if $x$ is observed, $\delta(x, A)$ is the probability that an action in $A$ (a subset of $\mathscr{A}$) will be chosen. 
+
+Randomized decision rules are motivated by Berger as most useful for decision problems involving an intelligent opponent (as in a game). It seems to me that randomized decision rules may also have some link to ML algorithms (e.g., adversarial networks?), but I haven't explored this idea further. 
+
+__Definition 8:__ For a randomized decision rule $\delta^\star(x,\cdot)$, the loss function is defined to be $$L(\theta,\delta^\star(x,\cdot)) = E^{\delta^\star(x, \cdot)}[L(\theta, a)].$$
+
+In this definition, the loss associated with a state of nature $\theta$ and observed data $x$ is itself an average of the loss associated with all the actions in $A \subset \mathscr{A}.$ Averaging $L(\theta,\delta^\star(x,\cdot))$ over the possible data values, we obtain the risk function: $$R(\theta, \delta^\star) = E_\theta^X[L(\theta,\delta^\star(x,\cdot))].$$
+
 <hr> 
+
+

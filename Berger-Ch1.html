@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jacob Oram" />
 
-<meta name="date" content="2022-12-15" />
+<meta name="date" content="2022-12-17" />
 
 <title>Berger (1985) Chapter 1: Key Definitions and Concepts</title>
 
@@ -277,6 +277,9 @@ $(document).ready(function () {
   <a href="index.html">Intro</a>
 </li>
 <li>
+  <a href="Berger-Ch1.html">Berger Ch.1</a>
+</li>
+<li>
   <a href="Berger-Ch2.html">Berger Ch.2</a>
 </li>
 <li>
@@ -303,7 +306,7 @@ $(document).ready(function () {
 <h1 class="title toc-ignore"><span class="citation">Berger (1985)</span>
 Chapter 1: Key Definitions and Concepts</h1>
 <h4 class="author">Jacob Oram</h4>
-<h4 class="date">2022-12-15</h4>
+<h4 class="date">2022-12-17</h4>
 
 </div>
 
@@ -375,6 +378,38 @@ decision rule to be a frequentist measure since it involves the risk
 function (which averages over all possible samples, not simply the
 observed data values contained in the sample at hand). I find this
 confusing, because it requires a prior to be specified.</p>
+<p>A decision rule that minimizes <span class="math inline">\(r(\pi,
+\delta)\)</span> is called a <em>Bayes rule</em>, and the realized value
+<span class="math inline">\(r(\pi, \delta)\)</span> is called the
+<em>Bayes risk</em>.</p>
+<hr>
+<p><strong>Definition 7:</strong> A <em>randomized decision rule</em>
+<span class="math inline">\(\delta^\star(x,\cdot)\)</span> is, for each
+<span class="math inline">\(x\)</span>, a probability distribution on
+<span class="math inline">\(\mathscr{A}\)</span> so that if <span
+class="math inline">\(x\)</span> is observed, <span
+class="math inline">\(\delta(x, A)\)</span> is the probability that an
+action in <span class="math inline">\(A\)</span> (a subset of <span
+class="math inline">\(\mathscr{A}\)</span>) will be chosen.</p>
+<p>Randomized decision rules are motivated by Berger as most useful for
+decision problems involving an intelligent opponent (as in a game). It
+seems to me that randomized decision rules may also have some link to ML
+algorithms (e.g., adversarial networks?), but I haven’t explored this
+idea further.</p>
+<p><strong>Definition 8:</strong> For a randomized decision rule <span
+class="math inline">\(\delta^\star(x,\cdot)\)</span>, the loss function
+is defined to be <span
+class="math display">\[L(\theta,\delta^\star(x,\cdot)) =
+E^{\delta^\star(x, \cdot)}[L(\theta, a)].\]</span></p>
+<p>In this definition, the loss associated with a state of nature <span
+class="math inline">\(\theta\)</span> and observed data <span
+class="math inline">\(x\)</span> is itself an average of the loss
+associated with all the actions in <span class="math inline">\(A \subset
+\mathscr{A}.\)</span> Averaging <span
+class="math inline">\(L(\theta,\delta^\star(x,\cdot))\)</span> over the
+possible data values, we obtain the risk function: <span
+class="math display">\[R(\theta, \delta^\star) =
+E_\theta^X[L(\theta,\delta^\star(x,\cdot))].\]</span></p>
 <hr>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-berger85" class="csl-entry">
